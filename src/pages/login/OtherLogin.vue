@@ -10,13 +10,13 @@
         <div class="title">登录看朋友内容</div>
         <div class="sub-title">未注册的手机号验证通过后将自动注册</div>
       </div>
-
+      
       <LoginInput autofocus type="phone" v-model="phone" placeholder="请输入手机号" />
-
+      
       <div class="notice" v-if="notice">
         {{ notice }}
       </div>
-
+      
       <div class="protocol" :class="showAnim ? 'anim-bounce' : ''">
         <Tooltip style="top: -150%; left: -10rem" v-model="showTooltip" />
         <div class="left">
@@ -27,16 +27,16 @@
           <span
             class="link"
             @click="$router.push('/service-protocol', { type: '“抖音”用户服务协议' })"
-            >用户协议</span
+          >用户协议</span
           >
           和
           <span class="link" @click="$router.push('/service-protocol', { type: '“抖音”隐私政策' })"
-            >隐私政策</span
+          >隐私政策</span
           >
           ，同时登录并使用抖音火山版（原“火山小视频”）和抖音
         </div>
       </div>
-
+      
       <dy-button
         type="primary"
         :loading="loading"
@@ -46,12 +46,12 @@
       >
         获取短信验证码
       </dy-button>
-
+      
       <div class="options">
         <span class="link" @click="$router.push('/login/password')">密码登录</span>
         <span class="link" @click="otherLogin">其他方式登录</span>
       </div>
-
+      
       <from-bottom-dialog
         page-id="other-login"
         v-model="isOtherLogin"
@@ -143,30 +143,49 @@ export default {
   color: black;
   font-size: 14rem;
   background: white;
-
-  .block-dialog {
-    color: black;
-
-    .item {
-      height: 50rem;
+  
+  .content {
+    padding: 60rem 30rem;
+    
+    .desc {
+      margin-bottom: 60rem;
       display: flex;
-      justify-content: center;
       align-items: center;
-      border-top: 1px solid gainsboro;
-
-      img {
-        height: 25rem;
-        margin-right: 10rem;
+      flex-direction: column;
+      
+      .title {
+        margin-bottom: 20rem;
+        font-size: 14rem;
       }
-
-      &:nth-last-child(1) {
-        border-top: none;
+      
+      .phone-number {
+        letter-spacing: 3rem;
+        font-size: 30rem;
+        margin-bottom: 10rem;
+      }
+      
+      .sub-title {
+        font-size: 12rem;
+        color: var(--second-text-color);
       }
     }
-
-    .space {
-      height: 10rem;
-      background: whitesmoke;
+    
+    .button {
+      width: 100%;
+      margin-bottom: 5rem;
+    }
+    
+    .protocol {
+      position: relative;
+      color: gray;
+      margin-top: 20rem;
+      font-size: 12rem;
+      display: flex;
+      
+      .left {
+        padding-top: 1rem;
+        margin-right: 5rem;
+      }
     }
   }
 }

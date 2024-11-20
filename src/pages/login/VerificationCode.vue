@@ -12,6 +12,7 @@
       </div>
 
       <LoginInput
+        style="margin-bottom: 5px"
         autofocus
         type="code"
         v-model="data.code"
@@ -105,9 +106,9 @@ function login() {
 </script>
 
 <style scoped lang="less">
-@import '../../assets/less/index';
-@import 'Base.less';
-
+body .VerificationCode {
+  font-size: 14rem;
+}
 .VerificationCode {
   position: fixed;
   left: 0;
@@ -119,12 +120,50 @@ function login() {
   font-size: 14rem;
   background: white;
 
-  .options {
-    margin-top: 10rem;
-  }
+  .content {
+    padding: 60rem 30rem;
 
-  .button {
-    margin-top: 20rem;
+    .desc {
+      margin-bottom: 60rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .title {
+        margin-bottom: 20rem;
+        font-size: 14rem;
+      }
+
+      .phone-number {
+        letter-spacing: 3rem;
+        font-size: 30rem;
+        margin-bottom: 10rem;
+      }
+
+      .sub-title {
+        font-size: 12rem;
+        color: var(--second-text-color);
+      }
+    }
+
+    .button {
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 5rem;
+    }
+
+    .protocol {
+      position: relative;
+      color: gray;
+      margin-top: 20rem;
+      font-size: 12rem;
+      display: flex;
+
+      .left {
+        padding-top: 1rem;
+        margin-right: 5rem;
+      }
+    }
   }
 }
 </style>
