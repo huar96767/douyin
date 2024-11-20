@@ -10,8 +10,9 @@
         <div class="title">请输入验证码</div>
         <div class="sub-title">验证码已通过短信发送到+86 13800138000</div>
       </div>
-      
+
       <LoginInput
+        style="margin-bottom: 5px"
         autofocus
         type="code"
         v-model="data.code"
@@ -22,7 +23,7 @@
       <div class="options" v-if="data.showVoiceCode">
         <span> 收不到短信？<span class="link" @click="getVoiceCode">获取语音验证码</span> </span>
       </div>
-      
+
       <dy-button
         type="primary"
         :loading="data.loading"
@@ -73,7 +74,7 @@ function getVoiceCode() {
         _showConfirmDialog(
           '',
           '您的手机可能由于空号/欠费/停机无法收到验证码，请恢复手机号状态，如果' +
-          '您因为换号无法收到验证码，可以尝试找回账号',
+            '您因为换号无法收到验证码，可以尝试找回账号',
           '',
           () => {},
           null,
@@ -118,45 +119,46 @@ body .VerificationCode {
   color: black;
   font-size: 14rem;
   background: white;
-  
+
   .content {
     padding: 60rem 30rem;
-    
+
     .desc {
       margin-bottom: 60rem;
       display: flex;
       align-items: center;
       flex-direction: column;
-      
+
       .title {
         margin-bottom: 20rem;
         font-size: 14rem;
       }
-      
+
       .phone-number {
         letter-spacing: 3rem;
         font-size: 30rem;
         margin-bottom: 10rem;
       }
-      
+
       .sub-title {
         font-size: 12rem;
         color: var(--second-text-color);
       }
     }
-    
+
     .button {
       width: 100%;
+      margin-top: 10px;
       margin-bottom: 5rem;
     }
-    
+
     .protocol {
       position: relative;
       color: gray;
       margin-top: 20rem;
       font-size: 12rem;
       display: flex;
-      
+
       .left {
         padding-top: 1rem;
         margin-right: 5rem;
